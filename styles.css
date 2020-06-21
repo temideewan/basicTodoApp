@@ -1,0 +1,183 @@
+html {
+	font-size: 62.5%;
+}
+body {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	position: relative;
+}
+
+.container {
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.12) 0%,
+		rgba(0, 0, 0, 0.12) 50%,
+		rgba(255, 200, 0, 0.884) 50%,
+		rgba(235, 175, 66, 0.671) 70%
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	position: absolute;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.todo {
+	width: 70rem;
+	/* background-color: red; */
+	padding: 2rem 3rem;
+}
+
+.todo h1 {
+	background-color: rgba(255, 198, 0, 0.9);
+	border-radius: 0.3rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	font-size: 4rem;
+	width: 100%;
+
+	text-align: center;
+	padding: 1.5rem 0.2rem;
+	color: #333;
+	transition: all 0.3s ease;
+	margin-bottom: 2rem;
+}
+
+.todo h1:hover {
+	transform: scale(1.02);
+	box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.35);
+}
+
+.todo ul {
+	/* background-color: #fff; */
+	list-style: none;
+	box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.09);
+	margin: 2.5rem 0;
+	overflow: hidden;
+}
+
+.todo ul li {
+	background-color: rgba(255, 255, 255, 0.2);
+	align-items: baseline;
+	border-bottom: 1px solid rgba(255, 198, 0, 0.2);
+	display: flex;
+	font-size: 2rem;
+	padding: 2.5rem 2rem;
+	word-break: break-all;
+}
+
+.todo ul li input {
+	display: none;
+}
+.todo ul li input:checked + label::before {
+	content: '✔';
+}
+.todo ul li input:checked ~ p::after {
+	transform: scaleX(1);
+}
+
+.todoList .error {
+	background-color: rgba(255, 255, 255, 0.2);
+	align-items: baseline;
+	border-bottom: 2px solid rgba(253, 4, 4, 0.671);
+	display: flex;
+	font-size: 2rem;
+	padding: 1.5rem;
+	color: rgba(253, 4, 4, 0.671);
+	word-break: break-all;
+}
+
+.todo ul li p {
+	color: rgba(15, 14, 73, 0.849);
+	font-weight: 700;
+	position: relative;
+}
+
+.todo ul li p::after {
+	content: '';
+	position: absolute;
+	border-top: 3px solid rgba(253, 4, 4, 0.671);
+	width: 100%;
+	top: 50%;
+	left: 0;
+	height: 2px;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease;
+}
+
+.todo ul li label {
+	margin-right: 1rem;
+	cursor: pointer;
+	position: relative;
+}
+
+.todo ul li label::before {
+	content: '⬜';
+	position: relative;
+	left: 0;
+}
+
+.todo form {
+	margin-top: 4rem;
+	display: flex;
+}
+.todo form input {
+	flex: 1;
+	/* height: 100%; */
+	padding: 10px;
+	margin-right: 2.5rem;
+	background-color: transparent;
+	color: #3a3210;
+	border: none;
+	border-bottom: 2px solid rgb(51, 49, 49);
+	font-size: 1.7rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+	outline: none;
+	transition: all 0.3s ease;
+}
+
+.todo form input:focus {
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+	transform: translateY(-0.13rem);
+	border-bottom: 2px solid rgba(51, 49, 49, 0.5);
+}
+
+.todo form input::placeholder {
+	color: rgba(31, 14, 92, 0.712);
+}
+
+.todo form button {
+	/* height: 100%; */
+	padding: 1rem 1.8rem;
+	align-self: center;
+	border: 1px solid rgb(51, 49, 49);
+	border-radius: 1rem;
+	background-color: transparent;
+	color: rgb(51, 49, 49);
+	transition: all 0.3s ease;
+	outline: none;
+	font-size: 1.8rem;
+}
+
+.todo form button:hover {
+	border: 1px solid transparent;
+	background: rgb(51, 51, 51);
+	color: #ffc800ad;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+	transform: translateY(-2px);
+}
+
+.todo form button:focus {
+	transform: translateY(0);
+}
